@@ -134,7 +134,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #fcfaf2;
   text-transform: capitalize;
   cursor: pointer;
-  transition: all 0.25s ease-in-out;
+  transition: all 0.35s ease-in-out;
 }
 .btn:hover {
   background-color: #38c1ff;
@@ -168,7 +168,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 1;
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-right-color: transparent;
-  transition: all 0.25s ease-in-out;
+  transition: all 0.35s ease-in-out;
   -webkit-animation: scroll-to-top 2s infinite;
           animation: scroll-to-top 2s infinite;
 }
@@ -212,11 +212,11 @@ header nav .container .logo {
 }
 header nav .container .logo a {
   color: #fcfaf2;
-  transition: all 0.25s ease-in-out;
+  transition: all 0.35s ease-in-out;
 }
 header nav .container .logo a span {
   color: #38c1ff;
-  transition: all 0.25s ease-in-out;
+  transition: all 0.35s ease-in-out;
 }
 header nav .container .logo:hover a {
   color: #38c1ff;
@@ -240,7 +240,7 @@ header nav .container .nav-links-toggle span {
   display: block;
   height: 3px;
   background-color: #fcfaf2;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.35s ease-in-out;
 }
 header nav .container .nav-links-toggle span:nth-of-type(1) {
   margin-bottom: 8px;
@@ -265,7 +265,7 @@ header nav .container .nav-links li a {
   display: block;
   padding: 34px 15px;
   color: #fcfaf2;
-  transition: all 0.25s ease-in-out;
+  transition: all 0.35s ease-in-out;
 }
 header nav .container .nav-links li a:hover, header nav .container .nav-links li a.active {
   color: #38c1ff;
@@ -321,7 +321,6 @@ header .landing .container .left ul {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  font-size: 20px;
 }
 @media (max-width: 392px) {
   header .landing .container .left ul {
@@ -338,7 +337,7 @@ header .landing .container .left ul li a {
   background-color: rgba(255, 255, 255, 0.05);
   margin-right: 4px;
   border-radius: 50%;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.35s ease-in-out;
 }
 header .landing .container .left ul li a:hover {
   background-color: #38c1ff;
@@ -618,7 +617,7 @@ section.stats .container .box {
   flex-basis: calc(33.3333% - 12px);
   border: 1px solid transparent;
   border-radius: 10px;
-  transition: all 0.25s ease-in-out;
+  transition: all 0.35s ease-in-out;
 }
 @media (max-width: 768px) {
   section.stats .container .box {
@@ -649,6 +648,69 @@ section.stats .container .box span {
   font-weight: 600;
 }
 
+section.pricing {
+  padding-bottom: 70px;
+  background-color: #23263a;
+}
+section.pricing .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+section.pricing .container .plan {
+  flex-basis: calc(33.33333% - 12px);
+  background-color: rgba(255, 255, 255, 0.02);
+  padding: 54px 32px;
+  border-radius: 12px;
+  color: #fcfaf2;
+  text-align: center;
+  border-bottom: 2px solid #38c1ff;
+}
+section.pricing .container .plan:nth-of-type(2) {
+  transform: translateY(-20px);
+}
+@media (max-width: 768px) {
+  section.pricing .container .plan {
+    flex-basis: calc(50% - 12px);
+    margin-bottom: 24px;
+  }
+  section.pricing .container .plan:nth-of-type(2) {
+    transform: translateY(0);
+  }
+}
+@media (max-width: 392px) {
+  section.pricing .container .plan {
+    flex-basis: 100%;
+    margin-bottom: 24px;
+  }
+  section.pricing .container .plan:nth-of-type(2) {
+    transform: translateY(0);
+  }
+}
+section.pricing .container .plan .header h3 {
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+section.pricing .container .plan .header p {
+  font-size: 46px;
+}
+section.pricing .container .plan .header p span {
+  font-size: 20px;
+}
+section.pricing .container .plan .body {
+  margin: 32px 0;
+  text-transform: capitalize;
+  color: rgba(255, 255, 255, 0.75);
+}
+section.pricing .container .plan .body li {
+  padding: 14px;
+}
+section.pricing .container .plan .footer .btn {
+  padding: 12px 18px;
+}
+
 section.contact {
   background-color: rgba(35, 38, 58, 0.98);
   padding-bottom: 70px;
@@ -668,16 +730,21 @@ section.contact .container form .left, section.contact .container form .right {
 section.contact .container form textarea, section.contact .container form input[type=text] {
   display: block;
   width: 100%;
-  padding: 14px;
+  padding: 18px;
   background-color: rgba(255, 255, 255, 0.02);
   margin-bottom: 12px;
   border-radius: 6px;
   color: #fcfaf2;
   font-weight: 200;
+  border: 1px solid transparent;
+  transition: all 0.5s ease-in-out;
+}
+section.contact .container form textarea:focus, section.contact .container form input[type=text]:focus {
+  border-color: #38c1ff;
 }
 section.contact .container form textarea {
   resize: vertical;
-  min-height: 105px;
+  min-height: 194px;
 }
 section.contact .container form .btn {
   border-radius: 6px;
@@ -704,6 +771,11 @@ footer .social li a {
   height: 52px;
   background-color: rgba(0, 0, 0, 0.1);
   color: #fcfaf2;
+  transition: all 0.35s ease-in-out;
+}
+footer .social li a:hover {
+  background-color: rgba(0, 0, 0, 0.45);
+  color: #38c1ff;
 }
 footer .copyright {
   background-color: rgba(255, 255, 255, 0.02);

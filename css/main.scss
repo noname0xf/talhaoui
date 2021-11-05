@@ -138,7 +138,7 @@ h1, h2, h3, h4, h5, h6 {
     color: $main-text-color;
     text-transform: capitalize;
     cursor: pointer;
-    @include transition(all .25s);
+    @include transition(all .35s);
     &:hover {
         background-color: $main-color;
         color: $main-text-color
@@ -173,7 +173,7 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 1;
     border: 1px solid rgba($color: white, $alpha: .5);
     border-right-color: transparent;
-    @include transition(all .25s);
+    @include transition(all .35s);
     animation: scroll-to-top 2s infinite;
 }
 @keyframes scroll-to-top {
@@ -202,10 +202,10 @@ header {
                 padding: 34px 0;
                 a {
                     color: $main-text-color;
-                    @include transition(all .25s);
+                    @include transition(all .35s);
                     span {
                         color: $main-color;
-                        @include transition(all .25s);
+                        @include transition(all .35s);
                     }
                 }
                 &:hover {
@@ -228,7 +228,7 @@ header {
                     display: block;
                     height: 3px;
                     background-color: $main-text-color;
-                    @include transition(all .2s);
+                    @include transition(all .35s);
                     &:nth-of-type(1) {margin-bottom: 8px;}
                 }
                 &.active {
@@ -248,7 +248,7 @@ header {
                         display: block;
                         padding: 34px 15px;
                         color: $main-text-color;
-                        @include transition(all .25s);
+                        @include transition(all .35s);
                         &:hover,
                         &.active {color: $main-color}
                     }
@@ -293,7 +293,6 @@ header {
                     display: flex;
                     align-items: center;
                     justify-content: flex-start;
-                    font-size: 20px;
                     @media (max-width: $xs) {justify-content: center;}
                     li {
                         a {
@@ -306,7 +305,7 @@ header {
                             background-color: rgba($color: white, $alpha: .05);
                             margin-right: 4px;
                             border-radius: 50%;
-                            @include transition(all .2s);
+                            @include transition(all .35s);
                             &:hover {
                                 background-color: $main-color;
                                 color: $main-text-color
@@ -582,7 +581,7 @@ section.stats {
             @media (max-width: $sm) {
                 flex-basis: 100%;
             }
-            @include transition(all .25s);
+            @include transition(all .35s);
             &:hover {
                 @include transform(translateY(-14px));
                 border-color: $main-color;
@@ -605,6 +604,67 @@ section.stats {
 }
 // stats
 
+// pricing
+section.pricing {
+    padding-bottom: $main-section-padding;
+    background-color: $main-bg-color;
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .plan {
+            flex-basis: calc(33.33333% - 12px);
+            background-color: rgba($color: white, $alpha: .02);
+            padding: 54px 32px;
+            border-radius: 12px;
+            color: $main-text-color;
+            text-align: center;
+            border-bottom: 2px solid $main-color;
+            &:nth-of-type(2) {
+                @include transform(translateY(-20px));
+            }
+            @media (max-width: $sm) {
+                flex-basis: calc(50% - 12px);
+                margin-bottom: 24px;
+                &:nth-of-type(2) {@include transform(translateY(0))}
+            }
+            @media (max-width: $xs) {
+                flex-basis: 100%;
+                margin-bottom: 24px;
+                &:nth-of-type(2) {@include transform(translateY(0))}
+            }
+            .header {
+                h3 {
+                    font-size: 24px;
+                    font-weight: 600;
+                    text-transform: capitalize;
+                }
+                p {
+                    font-size: 46px;
+                    span {
+                        font-size: 20px;
+                    }
+                }
+            }
+            .body {
+                margin: 32px 0;
+                text-transform: capitalize;
+                color: rgba($color: white, $alpha: .75);
+                li {
+                    padding: 14px;
+                }
+            }
+            .footer {
+                .btn {
+                    padding: 12px 18px;
+                }
+            }
+        }
+    }
+}
+// pricing
+
 // contact
 section.contact {
     background-color: rgba($color: $main-bg-color, $alpha: .98);
@@ -622,16 +682,21 @@ section.contact {
             textarea, input[type='text'] {
                 display: block;
                 width: 100%;
-                padding: 14px;
+                padding: 18px;
                 background-color: rgba($color: white, $alpha: .02);
                 margin-bottom: 12px;
                 border-radius: 6px;
                 color: $main-text-color;
                 font-weight: 200;
+                border: 1px solid transparent;
+                @include transition(all .5s);
+                &:focus {
+                    border-color: $main-color;
+                }
             }
             textarea {
                 resize: vertical;
-                min-height: 105px;
+                min-height: 194px;
             }
             .btn {
                 border-radius: 6px;
@@ -661,7 +726,12 @@ footer {
                 width: 52px;
                 height: 52px;
                 background-color: rgba($color: black, $alpha: .1);
-                color: $main-text-color
+                color: $main-text-color;
+                @include transition(all .35s);
+                &:hover {
+                    background-color: rgba($color: black, $alpha: .45);
+                    color: $main-color;
+                }
             }
         }
     }
